@@ -1,0 +1,16 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+}
+
+.label-input-inline {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-transform: capitalize;
+}
+
+.label-input-inline label {
+    margin: 10px;
+}
