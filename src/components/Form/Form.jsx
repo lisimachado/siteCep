@@ -89,29 +89,31 @@ export function FormEndereco() {
 			<Form className="FormEndereco"
 				onSubmit={handleFormSubmit}>
 
-				<Form.Group className="label-input-inline col-4">
-					<Form.Label>CEP</Form.Label>
+				<Form.Group className="label-input-inline col-6">
+					<Form.Label className="col-4 text-end">CEP:</Form.Label>
 					<Form.Control
 						onBlur={buscarCEP}
 						as={IMaskInput}
 						mask="00000000"
 						value={cep}
-						required />
+						required
+						className="text-start" />
+
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-5">
-					<div className='label-input-inline' >
-						<Form.Label>Código IBGE</Form.Label>
-						<Form.Control
-							type="number"
-							value={ibge}
-							required
-						/>
-					</div>
+				<Form.Group className="label-input-inline col-6">
+					<Form.Label className="col-4 text-end">Código IBGE:</Form.Label>
+					<Form.Control
+						type="number"
+						value={ibge}
+						required
+						className="text-start"
+					/>
+
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-8">
-					<Form.Label>Logradouro</Form.Label>
+				<Form.Group className="label-input-inline col-8 ">
+					<Form.Label className="col-3 text-end">Logradouro:</Form.Label>
 					<Form.Control
 						type="text"
 						value={logradouro}
@@ -119,15 +121,15 @@ export function FormEndereco() {
 					/>
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-6" >
-					<Form.Label>Complemento</Form.Label>
+				<Form.Group className="label-input-inline col-8" >
+					<Form.Label className="col-3 text-end">Complemento:</Form.Label>
 					<Form.Control type="text"
 						value={complemento}
 					/>
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-5">
-					<Form.Label>Bairro</Form.Label>
+				<Form.Group className="label-input-inline col-6">
+					<Form.Label className="col-4 text-end">Bairro:</Form.Label>
 					<Form.Control
 						type="text"
 						value={bairro}
@@ -136,7 +138,7 @@ export function FormEndereco() {
 				</Form.Group>
 
 				<Form.Group className="label-input-inline col-8">
-					<Form.Label>Localidade</Form.Label>
+					<Form.Label className="col-3 text-end">Localidade:</Form.Label>
 					<Form.Control
 						type="text"
 						value={localidade}
@@ -145,7 +147,7 @@ export function FormEndereco() {
 				</Form.Group>
 
 				<Form.Group className="label-input-inline col-4">
-					<Form.Label>Estado/UF</Form.Label>
+					<Form.Label className="col-6 text-end">Estado:</Form.Label>
 					<Form.Control
 						type="text"
 						value={uf}
