@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { IMaskInput } from 'react-imask';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 export function FormEndereco() {
+	
+const navigate = useNavigate(); // Importando useNavigate
+
   const [cep, setCep] = useState('');
   const [ibge, setIbge] = useState('');
   const [logradouro, setLogradouro] = useState('');

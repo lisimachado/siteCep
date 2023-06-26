@@ -1,7 +1,11 @@
-import React from 'react';
+import { listaEndereco } from '/src/components/Lista/Lista.jsx';
 
-const Resultado = () => {
-  return <h1>Resultado Page</h1>;
+export const Resultado = () => {
+  return (
+	<div className="container">
+		<h1>Endereço Encontrado</h1>
+		<listaEndereco />
+	</div>
+  )
 };
 
-export default Resultado;
