@@ -1,80 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
-/*export const Resultado = () => {
-  return <h1>Resultado Page</h1>;
-};
-*/
-// Para pegar dados do LocalStorage
-export function listaEndereco() {
-  const [endereco, setEndereco] = useState([]);
+export const listaEndereco = () => {
+  const [endereco, setEndereco] = useState(null);
 
   useEffect(() => {
-    const novoEndereco = localStorage.getItem('endereco');
-    if (novoEndereco) {
-      const parseEndereco = JSON.parse(novoEndereco);
-      setEndereco(parseEndereco);
+    const dadosEndereco = localStorage.getItem('dadosEndereco');
+    if (dadosEndereco) {
+      const enderecoLocalStorage = JSON.parse(dadosEndereco);
+      if (Array.isArray(enderecoLocalStorage) && enderecoLocalStorage.length > 0) {
+        setEndereco(enderecoLocalStorage[enderecoLocalStorage.length - 1]);
+      }
     }
   }, []);
 
-  return (
-    <div>
-      <h2>Endereço Encontrado</h2>
-      <ul>
-        {endereco.map((address, index) => (
-          <li key={index}>
-            <p>CEP: {address.cep}</p>
-            <p>Código IBGE: {address.ibge}</p>
-            <p>Logradouro: {address.logradouro}</p>
-            <p>Complemento: {address.complemento}</p>
-            <p>Bairro: {address.bairro}</p>
-            <p>Localidade: {address.localidade}</p>
-            <p>Estado: {address.uf}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+  const navigate = useNavigate();
 
-/*
+  const handleVoltar = () => {
+    navigate(-1);
 
-import { useEffect, useState } from 'react';
-
-export const Resultado = () => {
-  /*return <h1>Resultado Page</h1>;
-}
-	//Para pegar dados do LocalStorage
-  export function buscaEndereco = () => {
-    */
-   /*
-    const [endereco, setEndereco] = useState([]);
-  
-    useEffect(() => {
-      const novoEndereco = localStorage.getItem('endereco');
-      if (novoEndereco) {
-        const parseEndereco = JSON.parse(novoEndereco);
-        setEndereco(parseEndereco);
-      }
-    }, []);
-  
-    return (
-      <div>
-        <h2>Endereço Encontrato</h2>
-        <ul>
-          {endereco.map((address, index) => (
-            <li key={index}>
-              <p>CEP: {address.cep}</p>
-              <p>Código IBGE: {address.ibge}</p>
-              <p>Logradouro: {address.logradouro}</p>
-              <p>Complemento: {address.complemento}</p>
-              <p>Bairro: {address.bairro} </p>
-              <p>Localidade: {address.localidade}</p>
-              <p>Estado: {address.uf}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
   }
 
-  */
+  if (!endereco) {
+    return null; // Caso não haja endereço para exibir
+  }
+
+
+
+  return (
+    <div>
+      <p>CEP: {endereco.cep}</p>
+      <p>Código IBGE: {endereco.ibge}</p>
+      <p>Logradouro: {endereco.logradouro}</p>
+      <p>Complemento: {endereco.complemento}</p>
+      <p>Bairro: {endereco.bairro}</p>
+      <p>Localidade: {endereco.localidade}</p>
+      <p>Estado: {endereco.uf}</p>
+
+      <Button
+        className="btn-envio"
+        variant="success"
+        type="button"
+        id="btn-cadastro"
+        onClick={handleVoltar}>
+        Voltar
+      </Button>
+    </div>
+  );
+};

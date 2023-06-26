@@ -4,7 +4,8 @@ export const Resultado = () => {
   return (
 	<div className="container">
 		<h1>Endereço Encontrado</h1>
-		<listaEndereco />
+		{listaEndereco()}
+		
 	</div>
   )
 };
