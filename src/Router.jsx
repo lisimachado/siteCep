@@ -1,18 +1,14 @@
-import React from 'react'
-import { createBrowserRouter } from "react-router-dom";
-import { App } from "./App";
-import { Home } from "./pages/Home/Home";
-import { Resultado } from "./pages/Resultado/Resultado";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Resultado } from './pages/Resultado';
 
-export const appRouter = createBrowserRouter([
-	{
-		path: '/',
-		element: <App />,
-		children: [
-			{ path: '/', element: <Home /> },
-			{ path: '/home', element: <Home /> },
-			{ path: '/resultado', element: <Resultado /> },
+export const Router = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/resultado" element={<Resultado />} />
+    </Routes>
+  );
+};
 
-		],
-	},
-]);
