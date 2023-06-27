@@ -57,14 +57,12 @@ export function FormEndereco() {
 			setFormEnderecoValue(formularioAtualizado);
 
 			console.log('Dados salvos com sucesso!');
-			alert('Dados salvos com sucesso!');
 			limparDados(); // Limpa os dados após o envio
 			navigate("/resultado");
 		} catch (error) {
 			console.log(error);
 		};
 	};
-
 
 	const buscarCEP = (e) => {
 		const cep = e.target.value.replace(/\D/g, '');
@@ -89,8 +87,8 @@ export function FormEndereco() {
 			<Form className="FormEndereco"
 				onSubmit={handleFormSubmit}>
 
-				<Form.Group className="label-input-inline col-6">
-					<Form.Label className="col-4 text-end">CEP:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-4 col-lg-4">
+					<Form.Label className="col-sm-3 col-lg-6 text-end">CEP:</Form.Label>
 					<Form.Control
 						onBlur={buscarCEP}
 						as={IMaskInput}
@@ -101,8 +99,8 @@ export function FormEndereco() {
 
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-6">
-					<Form.Label className="col-4 text-end">Código IBGE:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-4 col-lg-4">
+					<Form.Label className="col-sm-3 col-lg-6 text-end">Código IBGE:</Form.Label>
 					<Form.Control
 						type="number"
 						value={ibge}
@@ -112,8 +110,8 @@ export function FormEndereco() {
 
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-8 ">
-					<Form.Label className="col-3 text-end">Logradouro:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-3 col-lg-6">
+					<Form.Label className="col-sm-3 col-lg-4 text-end">Logradouro:</Form.Label>
 					<Form.Control
 						type="text"
 						value={logradouro}
@@ -121,15 +119,15 @@ export function FormEndereco() {
 					/>
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-8" >
-					<Form.Label className="col-3 text-end">Complemento:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-3 col-lg-6" >
+					<Form.Label className="col-sm-3 col-lg-4 text-end">Complemento:</Form.Label>
 					<Form.Control type="text"
 						value={complemento}
 					/>
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-6">
-					<Form.Label className="col-4 text-end">Bairro:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-3 col-lg-6">
+					<Form.Label className="col-sm-3 col-lg-4 text-end">Bairro:</Form.Label>
 					<Form.Control
 						type="text"
 						value={bairro}
@@ -137,8 +135,8 @@ export function FormEndereco() {
 					/>
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-8">
-					<Form.Label className="col-3 text-end">Localidade:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-3 col-lg-6">
+					<Form.Label className="col-sm-3 col-lg-4 text-end">Localidade:</Form.Label>
 					<Form.Control
 						type="text"
 						value={localidade}
@@ -146,8 +144,8 @@ export function FormEndereco() {
 					/>
 				</Form.Group>
 
-				<Form.Group className="label-input-inline col-4">
-					<Form.Label className="col-6 text-end">Estado:</Form.Label>
+				<Form.Group className="label-input-inline col-sm-4 col-lg-4">
+					<Form.Label className="col-sm-3 col-lg-6 text-end">Estado:</Form.Label>
 					<Form.Control
 						type="text"
 						value={uf}
@@ -156,15 +154,13 @@ export function FormEndereco() {
 				</Form.Group>
 
 				<Button
-					className="btn-envio"
+					className="btnConfimar"
 					variant="success"
 					type="submit"
-					id="btn-cadastro"
 				>
 					Confirmar
 				</Button>
 			</Form>
 		</div>
 	)
-
 }

@@ -19,14 +19,11 @@ export const listaEndereco = () => {
 
   const handleVoltar = () => {
     navigate(-1);
-
   }
 
   if (!endereco) {
     return null; // Caso não haja endereço para exibir
   }
-
-
 
   return (
     <div>
@@ -40,10 +37,11 @@ export const listaEndereco = () => {
 
       <Button
         className="btn-envio"
-        variant="success"
+        variant="secondary"
         type="button"
         id="btn-cadastro"
-        onClick={handleVoltar}>
+        onClick={handleVoltar}
+        style={{ boxShadow: "2px 2px 4px rgba(70, 68, 68, 0.5)" }}>
         Voltar
       </Button>
     </div>
