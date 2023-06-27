@@ -16,15 +16,7 @@ Para atender as necessidades e os requisitos mínimos solicitados, foi disponibi
 - Criação de repositório público;
 - Criação de projeto em React - vite;
 - Definição das branches básicas necessárias;
-    Routers
-    Forms
-    Button
-    ApiCep
-    DadosForm
-    Style
-    Nav **talvez
-    Footer
-- Para organização do versionamento utilização do git flow;
+- Para organização do versionamento utilização de issues;
 
 Biblioteca React;
 React Vite - para inicialização e estrutura do projeto;

@@ -40,10 +40,11 @@ export const listaEndereco = () => {
 
       <Button
         className="btn-envio"
-        variant="success"
+        variant="secondary"
         type="button"
         id="btn-cadastro"
-        onClick={handleVoltar}>
+        onClick={handleVoltar}
+        style={{ boxShadow: "2px 2px 4px rgba(70, 68, 68, 0.5)" }}>
         Voltar
       </Button>
     </div>
