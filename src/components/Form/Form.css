@@ -14,3 +14,14 @@
 .label-input-inline label {
     margin: 10px;
 }
+
+.FormEndereco {
+    margin-left: 5%;
+
+}
+
+.btnConfimar {
+    margin: 2% 0% 0% 20%;
+    text-transform: capitalize;
+    box-shadow: 2px 2px 4px rgba(70, 68, 68, 0.5);
+}
