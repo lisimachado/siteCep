@@ -19,14 +19,11 @@ export const listaEndereco = () => {
 
   const handleVoltar = () => {
     navigate(-1);
-
   }
 
   if (!endereco) {
     return null; // Caso não haja endereço para exibir
   }
-
-
 
   return (
     <div>

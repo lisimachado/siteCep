@@ -64,7 +64,6 @@ export function FormEndereco() {
 		};
 	};
 
-
 	const buscarCEP = (e) => {
 		const cep = e.target.value.replace(/\D/g, '');
 		console.log(cep);
@@ -164,5 +163,4 @@ export function FormEndereco() {
 			</Form>
 		</div>
 	)
-
 }
